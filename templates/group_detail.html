@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Детали группы</title>
+</head>
+<body>
+    <h1>{{ group.name }}</h1>
+    <p>Принадлежность к продукту: {{ group.product.name }}</p>
+    <p>Минимальное количество участников: {{ group.min_users }}</p>
+    <p>Максимальное количество участников: {{ group.max_users }}</p>
+
+    <h2>Участники группы:</h2>
+    <ul>
+        {% for user in group.user_set.all %}
+            <li>{{ user.username }}</li> <!-- Или другое поле пользователя, например, user.full_name -->
+        {% endfor %}
+    </ul>
+</body>
+</html>
